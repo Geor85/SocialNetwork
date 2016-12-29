@@ -22,6 +22,7 @@
 					<c:out value="${sessionScope.username}" escapeXml="false" />
 					<form action="logout" method="POST">
 						<input type="submit" name="confirm" value="Log out" /></br>
+						
 					</form>
 				</c:when>		
 			</c:choose></li>
@@ -29,10 +30,8 @@
 
 	
 
-		<c:choose>
-
-				<c:when test="${empty sessionScope.username }">
-				<div id="authorization">
+		<div>
+		
 					<form action="login" method="POST">
 						<p>
 							<input type="text" name="username" placeholder="Username" />
@@ -42,19 +41,25 @@
 						</p>
 
 						<input type="submit" name="confirm" value="Log in" />
+						<button id="btn">Registration</button>
 					</form>
-					</div>
-				</c:when>
-				<c:otherwise>
-				   <div>
-					<c:out value="${sessionScope.username}" escapeXml="false" />
-					<form action="logout" method="POST">
-						<input type="submit" name="confirm" value="Log out" /></br>
+					
+				
+				    <form action="login" method="POST">
+						<p>
+							<input type="text" name="username" placeholder="Username" />
+						</p>
+						<p>
+							<input type="password" name="password" placeholder="Password" />
+						</p>
+
+						<input type="submit" name="confirm" value="Log in" />
+						<button id="btn">Registration</button>
 					</form>
-					</div>
-				</c:otherwise>
-			</c:choose>
-		
+				   
+					
+					
+		</div>
 	
 
 </body>
