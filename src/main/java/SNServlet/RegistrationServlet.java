@@ -28,7 +28,7 @@ public class RegistrationServlet extends HttpServlet {
 			userDAO.userAdd(user);
 			request.getSession().setAttribute("user", userDAO.FindByUserNamePassword(user.getUserName(), user.getPassword()));
 		} else {
-			request.getSession().setAttribute("error", "User name is busy. Please choose other user name.");
+			request.getSession().setAttribute("Sysmessage", "User name is busy. Please choose other user name.");
 		}
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp"); 

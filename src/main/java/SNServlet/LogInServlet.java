@@ -23,7 +23,7 @@ public class LogInServlet extends HttpServlet {
 		if(user != null) {
 			request.getSession().setAttribute("user", user);
 		} else {
-			request.setAttribute("error", "Wrong login or password.");
+			request.setAttribute("Sysmessage", "Wrong login or password.");
 		}
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
 		rd.forward(request, response);

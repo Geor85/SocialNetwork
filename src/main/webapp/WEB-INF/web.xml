@@ -28,6 +28,30 @@
   	<description></description>
   	<servlet-class>SNServlet.ShowPostsServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ShowUserPostsServlet</servlet-name>
+  	<display-name>ShowUserPostsServlet</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.ShowUserPostsServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddMessageServlet</servlet-name>
+  	<display-name>AddMessageServlet</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.AddMessageServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ShowCommentByPostId</servlet-name>
+  	<display-name>ShowCommentByPostId</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.ShowCommentByPostId</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ShowOnePostServlet</servlet-name>
+  	<display-name>ShowOnePostServlet</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.ShowOnePostServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
@@ -43,5 +67,21 @@
   <servlet-mapping>
   	<servlet-name>ShowPostsServlet</servlet-name>
   	<url-pattern>/ShowPostsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowUserPostsServlet</servlet-name>
+  	<url-pattern>/ShowUserPostsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddMessageServlet</servlet-name>
+  	<url-pattern>/AddMessageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowCommentByPostId</servlet-name>
+  	<url-pattern>/ShowCommentByPostId</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowOnePostServlet</servlet-name>
+  	<url-pattern>/ShowOnePostServlet</url-pattern>
   </servlet-mapping>
 </web-app>

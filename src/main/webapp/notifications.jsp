@@ -11,7 +11,7 @@
 </head>
 <body>
 <ul>
-<h2>VKomatoze</h2>
+
   <li><a href="index.jsp">Home</a></li>
   <li><a href="profile.jsp">Profile</a></li>
   <li><a href="myComments.jsp">My comments</a></li>
