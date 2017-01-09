@@ -27,12 +27,15 @@ public class RegistrationServlet extends HttpServlet {
 		if(userDAO.FindByUserName(user.getUserName()) == null) {
 			userDAO.userAdd(user);
 			request.getSession().setAttribute("user", userDAO.FindByUserNamePassword(user.getUserName(), user.getPassword()));
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp"); 
+			rd.forward(request, response);
 		} else {
 			request.getSession().setAttribute("Sysmessage", "User name is busy. Please choose other user name.");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/registration.jsp"); 
+			rd.forward(request, response);
 		}
 		
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp"); 
-		rd.forward(request, response);
+		
 	}
 
 }

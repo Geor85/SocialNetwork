@@ -14,7 +14,7 @@ public class PostDAOImpl implements PostDAO {
 	@Override
 	public void postAdd(Post post) {
 		try {
-			Class.forName("com.mySQL.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			System.err.println(e.getMessage() + ": PostDAOImpl");
 		}
@@ -35,7 +35,7 @@ public class PostDAOImpl implements PostDAO {
 	@Override
 	public void postDeleteById(int id) {
 		try {
-			Class.forName("com.mySQL.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			System.err.println(e.getMessage() + ": PostDAOImpl");
 		}
@@ -54,7 +54,7 @@ public class PostDAOImpl implements PostDAO {
 	@Override
 	public Post showPostById(int id) {
 		try {
-			Class.forName("com.mySQL.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			System.err.println(e.getMessage() + ": PostDAOImpl");
 		}
@@ -63,7 +63,11 @@ public class PostDAOImpl implements PostDAO {
 				""); PreparedStatement preparedStatement = connection.prepareStatement("select * from posts where post_id = ?;")) {
 			preparedStatement.setInt(1, id);
 			ResultSet rs = preparedStatement.executeQuery();
-			return new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message"));
+			Post post = new Post();
+			while(rs.next()) {
+			post = new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message"));
+			}
+			return post; 
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		}
@@ -74,21 +78,22 @@ public class PostDAOImpl implements PostDAO {
 	@Override
 	public ArrayList<Post> showAllPosts() {
 		try {
-			Class.forName("com.mySQL.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			System.err.println(e.getMessage() + ": PostDAOImpl");
 		}
 
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/socialnetwork", "root",
-				""); PreparedStatement preparedStatement = connection.prepareStatement("select * from posts;")) {
+				""); PreparedStatement preparedStatement = connection.prepareStatement(
+						"SELECT post_id, user_name, post_message, avatar "
+						+ "FROM socialnetwork.posts INNER JOIN socialnetwork.users "
+						+ "ON posts.user_name=users.username;")) {
 			ResultSet rs = preparedStatement.executeQuery();
 			ArrayList<Post> posts = new ArrayList<Post>();
-			if (rs.next() == false) {
-				return posts;
-			}
+			
 
 			while (rs.next()) {
-				posts.add(new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message")));
+				posts.add(new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message"), rs.getString("avatar")));
 			}
 
 			return posts;
@@ -103,7 +108,7 @@ public class PostDAOImpl implements PostDAO {
 	@Override
 	public ArrayList<Post> showPostsByUserName(String userName) {
 		try {
-			Class.forName("com.mySQL.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			System.err.println(e.getMessage() + ": PostDAOImpl");
 		}
@@ -118,7 +123,7 @@ public class PostDAOImpl implements PostDAO {
 			}
 
 			while (rs.next()) {
-				posts.add(new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message")));
+				posts.add(new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message"), rs.getString("avatar")));
 			}
 
 			return posts;

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>MyComments Page</title>
+<title>MyComments</title>
 <link href="main.css" rel="stylesheet">
 </head>
 <body>
@@ -17,16 +17,38 @@
   <li><a class="active" href="myComments.jsp">My comments</a></li>
   <li><a href="notifications.jsp">Notifications</a></li>
   <li id="log">
-  <c:out value="${sessionScope.username}" escapeXml="false" />
+  <c:out value="${sessionScope.user.userName}" escapeXml="false" />
 					<form action="logout" method="POST">
 						<input type="submit" name="confirm" value="Log out" /></br>
 					</form>
 					</li>
 </ul>
+<c:choose>
 
-<div >
-<h1> Комментарии </h1>
+		<c:when test="${empty sessionScope.user }">
+			<c:redirect url="/index.jsp" />
+
+		</c:when>
+	</c:choose>
+	
+	<c:choose>
+		<c:when test="${mycomments == null}">
+			<c:redirect url="/mycomments" />
+		</c:when>
+	</c:choose>
+	
+<div id="divone">
+<h1> My comments </h1>
+
+<c:forEach items="${mycomments}" var="mycomments">
+		         <div id="comments">
+					<p><c:out value="${mycomments.userName}" escapeXml="false" /></p> 
+			    
+				<c:out value="${mycomments.commentMessage}" escapeXml="false" />
+				</div>
+		</c:forEach>
+		
 </div>
-
+<c:remove var="mycomments" scope="session" />
 </body>
 </html>

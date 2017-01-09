@@ -53,29 +53,63 @@ public class CommentDAOImpl implements CommentDAO {
 	}
 
 	@Override
-	public ArrayList<Comment> ShowCommentsByPostId(int id) {
+	public ArrayList<Comment> ShowCommentByUserName(String userName) {
 		try {
-			Class.forName("com.mySQL.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			System.err.println(e.getMessage() + ": PostDAOImpl");
 		}
 		
 		try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/socialnetwork", "root", "");
 				PreparedStatement preparedStatement = connection.prepareStatement(
-						"SELECT FROM comments where post_id=?;")) {
-			ArrayList<Comment> comments = new ArrayList<Comment>();
-			preparedStatement.setInt(1, id);
-			ResultSet rs = preparedStatement.executeQuery();
-			while(rs.next()) {
-				comments.add(new Comment(rs.getInt("comment_id"), rs.getInt("post_id"), rs.getString("user_name"), rs.getString("comment_message")));
-			}
+						"SELECT* FROM comments where user_name = ?;")) {
 			
+			preparedStatement.setString(1, userName);
+			ResultSet rs = preparedStatement.executeQuery();
+			ArrayList<Comment> comments= new ArrayList<Comment>();
+			while(rs.next()) {
+			
+					comments.add(new Comment(rs.getInt("comment_id"), rs.getInt("post_id"), rs.getString("user_name"), rs.getString("comment_message")));
+			
+			}
 			return comments;
+			
 		} catch(SQLException e) {
 			System.err.println(e.getMessage());
 		}
 		
 		return null;
 	}
+	
+	@Override
+	public ArrayList<Comment> ShowCommentsByPostId(int id) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.err.println(e.getMessage() + ": PostDAOImpl");
+		}
+		
+		try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/socialnetwork", "root", "");
+				PreparedStatement preparedStatement = connection.prepareStatement(
+						"SELECT* FROM comments where post_id = ?;")) {
+			
+			preparedStatement.setInt(1, id);
+			ResultSet rs = preparedStatement.executeQuery();
+			ArrayList<Comment> comments= new ArrayList<Comment>();
+			while(rs.next()) {
+			
+					comments.add(new Comment(rs.getInt("comment_id"), rs.getInt("post_id"), rs.getString("user_name"), rs.getString("comment_message")));
+			
+			}
+			return comments;
+			
+		} catch(SQLException e) {
+			System.err.println(e.getMessage());
+		}
+		
+		return null;
+	}
+
+	
 
 }

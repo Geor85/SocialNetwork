@@ -10,6 +10,7 @@
 <link href="main.css" rel="stylesheet">
 </head>
 <body>
+
 	<ul>
 		
 		<li><a class="active" href="index.jsp">Home</a></li>
@@ -18,10 +19,8 @@
 		<li><a href="notifications.jsp">Notifications</a></li>
 		<li id="log"><c:choose>
 
-				<c:when test="${not empty sessionScope.username }">
-					<c:out value="${sessionScope.username}" escapeXml="false" />
-					<form action="logout" method="POST">
-						<input type="submit" name="confirm" value="Log out" /></br>
+				<c:when test="${not empty sessionScope.user }">
+					<c:redirect url="/home.jsp" />
 						
 					</form>
 				</c:when>		
@@ -30,32 +29,23 @@
 
 	
 
-		<div>
+		<div id="divone">
 		
-					<form action="login" method="POST">
+					<form class ="otherform" action="login" method="POST">
 						<p>
-							<input type="text" name="username" placeholder="Username" />
+							<input id="username" type="text" name="username" placeholder="Username" />
 						</p>
 						<p>
 							<input type="password" name="password" placeholder="Password" />
 						</p>
+						<c:out value="${requestScope.Sysmessage}" escapeXml="false" /> </br>
 
 						<input type="submit" name="confirm" value="Log in" />
-						<button id="btn">Registration</button>
+						<a href="registration.jsp" class="btn">Registration</a>
 					</form>
 					
 				
-				    <form action="login" method="POST">
-						<p>
-							<input type="text" name="username" placeholder="Username" />
-						</p>
-						<p>
-							<input type="password" name="password" placeholder="Password" />
-						</p>
-
-						<input type="submit" name="confirm" value="Log in" />
-						<button id="btn">Registration</button>
-					</form>
+				   
 				   
 					
 					

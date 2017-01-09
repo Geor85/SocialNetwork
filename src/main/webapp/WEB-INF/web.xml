@@ -52,6 +52,18 @@
   	<description></description>
   	<servlet-class>SNServlet.ShowOnePostServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<display-name>LogOutServlet</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.LogOutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ShowMyComments</servlet-name>
+  	<display-name>ShowMyComments</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.ShowMyComments</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
@@ -83,5 +95,13 @@
   <servlet-mapping>
   	<servlet-name>ShowOnePostServlet</servlet-name>
   	<url-pattern>/ShowOnePostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowMyComments</servlet-name>
+  	<url-pattern>/ShowMyComments</url-pattern>
   </servlet-mapping>
 </web-app>

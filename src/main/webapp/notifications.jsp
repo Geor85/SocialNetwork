@@ -17,14 +17,20 @@
   <li><a href="myComments.jsp">My comments</a></li>
   <li><a class="active" href="notifications.jsp">Notifications</a></li>
   <li id="log">
-  <c:out value="${sessionScope.username}" escapeXml="false" />
+  <c:out value="${sessionScope.user.userName}" escapeXml="false" />
 					<form action="logout" method="POST">
 						<input type="submit" name="confirm" value="Log out" /></br>
 					</form>
 					</li>
 </ul>
+<c:choose>
 
-<div >
+		<c:when test="${empty sessionScope.user }">
+			<c:redirect url="/index.jsp" />
+
+		</c:when>
+	</c:choose>
+<div id="divone">
 <h1> События </h1>
 </div>
 

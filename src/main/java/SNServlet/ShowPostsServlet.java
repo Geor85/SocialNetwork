@@ -16,8 +16,17 @@ import bean.Post;
 @WebServlet("/showallposts")
 public class ShowPostsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PostDAO postDAO = new PostDAOImpl();
+		ArrayList<Post> posts = postDAO.showAllPosts();
+		request.setAttribute("allposts", posts);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
+		rd.forward(request, response);
+	
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		PostDAO postDAO = new PostDAOImpl();

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Profile Page</title>
+<title>Profile</title>
 <link href="main.css" rel="stylesheet">
 </head>
 <body>
@@ -17,14 +17,20 @@
   <li><a href="myComments.jsp">My comments</a></li>
   <li><a href="notifications.jsp">Notifications</a></li>
   <li id="log">
-  <c:out value="${sessionScope.username}" escapeXml="false" />
+  <c:out value=" ${sessionScope.user.userName}" escapeXml="false" />
 					<form action="logout" method="POST">
 						<input type="submit" name="confirm" value="Log out" /></br>
 					</form>
 					</li>
 </ul>
+<c:choose>
 
-<div >
+		<c:when test="${sessionScope.user == null }">
+			<c:redirect url="/index.jsp" />
+
+		</c:when>
+	</c:choose>
+<div id="divone">
 <h1>Профиль</h1>
 </div>
 

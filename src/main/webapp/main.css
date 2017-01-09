@@ -2,8 +2,8 @@
 body {margin:0;}
 
 ul {
+	list-style-type: none;
 	color: white;
-    
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -37,21 +37,137 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 
-div {
-	padding:20px;
+#divone {
+	padding:10px;
 	margin-top:30px;
 	background-color:#4CAF50;
-	height:1500px;
+	min-height:1000px;
 	}
 	
-form {
+.posts {
 	
-	background-color: lightblue;
-	padding: 6px;
-	border: 2px solid green;
+	background-color:#ffffff;
+	width:500px;
+	margin: 10px 20%;
+	height:auto;
+}
+
+.post_head {
+	margin: 5px;
+	background-color:#ffffff;
+	width:auto;
+	min-height:50px;
+}
+
+.post_head2 {
+	border-bottom-style: 5px solid;
+	margin-left: 10%;
+	background-color:#ffffff;
+	width:70%;
+	height:56px;
+	padding:5px;
+	text-align: down;
+}
+.avatar {
+	background-color:#4CAF50;
+	margin: 1px;
+	float: left;
+	padding: 0;
+	height: auto;
+    width: 50px;
+	border: 2px solid #400040;
+}
+
+.avatar img {
+	margin: 0;
+	width: 100%;
+    
+}
+.text {
+	text-indent: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 5px;
+	background-color:#ffffff;
+	width:480px;
+	height:20px;
+	border: 1px solid #c0c0c0;
 	border-radius: 5px;	
-	margin: auto;
+	margin-top: 15px;
+	margin-left: 4px;
+	margin-bottom: 8px;
+}
+
+.posttext {
+	text-indent: 10px;
+	margin-left: 10%;
+	text-overflow: ellipsis;
+	padding: 5px;
+	background-color:#ffffff;
+	width:69.8%;
+	min-height:30px;
+	border: 1px solid #c0c0c0;
+	
+}
+
+#comments_line {
+	border-bottom-style: solid;
+	margin-left: 10%;
+	pedding: 0;
+	background-color:#f2f2f2;
+	width:70%;
+	height:20px;
+	border: 2px bottom #00ffff;
+	margin-top: 20px;
+}
+
+#comments {
+	padding: 5px;
+	margin-left: 15%;
+	background-color:#ffffff;
+	width:66%;
+	height:auto;
+	border: 1px solid #c0c0c0;
+	margin-top: 10px;
+}
+
+#comment {
+	width: 50%;
+	height: 30px;
+}
+
+.addcommentbutton {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	background-color: #0000ff; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+tr {
+	display: inline;
+}
+	
+form {
 	text-align: center;
+}
+
+.otherform {
+	background-color:#0080ff;
+	position: fixed;
+	top: 20%;
+	left: 40%;
+	border: 2px solid #000040;
+	border-radius: 5px;	
+	padding: 5px;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -59,6 +175,17 @@ input[type=button], input[type=submit], input[type=reset] {
 	border: none;
 	color: white;
 	padding: 5px 10px;
+	text-decoration: none;
+	margin: 0 2px;
+	cursor: pointer;
+}
+
+.btn {
+	background-color: #0080ff;
+	
+	border: none;
+	color: white;
+	padding: 3px 8px 4px 10px;
 	text-decoration: none;
 	margin: 0 2px;
 	cursor: pointer;

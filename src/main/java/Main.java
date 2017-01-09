@@ -1,16 +1,23 @@
+import java.util.ArrayList;
+
 import SNDAO.*;
-import bean.User;
+import bean.Comment;
+import bean.Post;
+
 
 public class Main {
 
 	public static void main(String[] args) {
 		//User user = new User("https://cs7062.vk.me/c540107/v540107359/2729/fYQlS_23QdA.jpg", "Ozio", "555", "George", "", "admin", 1);
-		UserDAO userDAO = new UserDAOImpl();
+		
 		//userDAO.userAdd(user);
-		userDAO.userBanByName("Ozio", 0);
-		for(int i=0; i < userDAO.usersShowAll().size(); i++) {
-			System.out.println(userDAO.usersShowAll().get(i));
-		}
+		
+		PostDAO postDAO = new PostDAOImpl();
+		Post post = postDAO.showPostById(5);
+		System.out.println(post);
+		CommentDAO commentDAO = new CommentDAOImpl();
+		Comment comment = new Comment(4, "Delok", "cjnfefbfucbefugb");
+		commentDAO.commentAdd(comment);
 
 	}
 

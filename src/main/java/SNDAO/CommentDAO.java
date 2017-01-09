@@ -7,5 +7,6 @@ import bean.Comment;
 public interface CommentDAO {
 	public void commentAdd(Comment comment);
 	public void commentDeleteById(int id);
+	public ArrayList<Comment> ShowCommentByUserName(String userName);
 	public ArrayList<Comment> ShowCommentsByPostId(int id);
 }

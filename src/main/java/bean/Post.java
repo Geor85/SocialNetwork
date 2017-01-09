@@ -4,6 +4,7 @@ public class Post {
 	private int id;
 	private String userName; //юзернейм автора поста
 	private String postMessage; //сообщение поста
+	private String avatar;
 	
 	public Post() {
 		
@@ -13,11 +14,19 @@ public class Post {
 		this.userName = userName;
 		this.postMessage = postMessage;
 	}
-
+	
 	public Post(int id, String userName, String postMessage) {
 		this.id = id;
 		this.userName = userName;
 		this.postMessage = postMessage;
+		
+	}
+
+	public Post(int id, String userName, String postMessage, String avatar) {
+		this.id = id;
+		this.userName = userName;
+		this.postMessage = postMessage;
+		this.avatar = avatar;
 	}
 
 	public int getId() {
@@ -43,11 +52,22 @@ public class Post {
 	public void setPostMessage(String postMessage) {
 		this.postMessage = postMessage;
 	}
+	
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", userName=" + userName + ", postMessage=" + postMessage + "]";
+		return "Post [id=" + id + ", userName=" + userName + ", postMessage=" + postMessage + ", avatar=" + avatar
+				+ "]";
 	}
+
+	
 	
 	
 
