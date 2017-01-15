@@ -39,10 +39,12 @@
 	
 <div id="divone">
 <h1>Profile</h1>
-<img src="<c:url value="${sessionScope.user.avatar}"/>" width="100"/>
-<h4>User name: </h4> <c:out value=" ${sessionScope.user.userName}" escapeXml="false" />
-<h4>Name: </h4> <c:out value=" ${sessionScope.user.name}" escapeXml="false" />
-<h4>Lastname: </h4> <c:out value=" ${sessionScope.user.lastName}" escapeXml="false" />
+<img src="<c:url value="${sessionScope.user.avatar}"/>" width="100"/> </br>
+<li id="profile"> <b> User name: </b>  <c:out value=" ${sessionScope.user.userName}" escapeXml="false" /> </li> </br>
+<li id="profile"> <b>Name: </b> <c:out value=" ${sessionScope.user.name}" escapeXml="false" /> </li> </br>
+<li id="profile"> <b>Lastname: </b> <c:out value=" ${sessionScope.user.lastName}" escapeXml="false" /> </li> </br> </br>
+
+<h3>My Posts:</h3>
 
 <c:forEach items="${userposts}" var="posts">
 	<div class="posts">

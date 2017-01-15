@@ -31,15 +31,13 @@
 		</c:when>
 	</c:choose>
 <div id="divone" >
-<h1>
-Пост</h1>
 
 <c:choose>
 		<c:when test="${comments == null}">
 			<c:redirect url="/showcomments" />
 		</c:when>
 	</c:choose>
-	
+	</br> </br>
 <div class="post_head2">
 				 <div class="avatar"><img src="<c:url value="${postuser.avatar}"/>" /></div>
 				

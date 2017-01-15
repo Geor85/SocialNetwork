@@ -34,6 +34,10 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
+#profile {
+	display: inline;
+}
+
 .active {
     background-color: #4CAF50;
 }
@@ -49,7 +53,7 @@ li a:hover:not(.active) {
 	padding:10px;
 	background-color:#ffffff;
 	width:500px;
-	margin: 10px 20%;
+	margin: 10px 30%;
 	height:auto;
 }
 
