@@ -58,6 +58,24 @@
   	<description></description>
   	<servlet-class>SNServlet.LogOutServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ShowMyComments</servlet-name>
+  	<display-name>ShowMyComments</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.ShowMyComments</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeletePostServlet</servlet-name>
+  	<display-name>DeletePostServlet</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.DeletePostServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteCommentServlet</servlet-name>
+  	<display-name>DeleteCommentServlet</display-name>
+  	<description></description>
+  	<servlet-class>SNServlet.DeleteCommentServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
@@ -93,5 +111,17 @@
   <servlet-mapping>
   	<servlet-name>LogOutServlet</servlet-name>
   	<url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowMyComments</servlet-name>
+  	<url-pattern>/ShowMyComments</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeletePostServlet</servlet-name>
+  	<url-pattern>/DeletePostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteCommentServlet</servlet-name>
+  	<url-pattern>/DeleteCommentServlet</url-pattern>
   </servlet-mapping>
 </web-app>

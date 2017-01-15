@@ -1,5 +1,7 @@
 SNServlet\ShowPostsServlet.class
+SNServlet\DeletePostServlet.class
 SNDAO\UserDAOImpl.class
+SNServlet\ShowMyComments.class
 SNDAO\CommentDAOImpl.class
 SNDAO\UserDAO.class
 SNServlet\ShowUserPostsServlet.class
@@ -9,6 +11,7 @@ SNServlet\AddCommentServlet.class
 bean\Comment.class
 Main.class
 SNServlet\RegistrationServlet.class
+SNServlet\DeleteCommentServlet.class
 SNServlet\LogOutServlet.class
 SNServlet\ShowCommentsByPostIdServlet.class
 SNServlet\ShowOnePostServlet.class

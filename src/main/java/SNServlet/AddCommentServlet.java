@@ -25,10 +25,8 @@ public class AddCommentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		User user = (User) request.getSession().getAttribute("postuser");
-		System.out.println(user);
 		CommentDAO commentDAO = new CommentDAOImpl();
 		Post post = (Post) request.getSession().getAttribute("post");
-		System.out.println(post);
 		Comment comment = new Comment(post.getId(), user.getUserName(), request.getParameter("comment"));
 		commentDAO.commentAdd(comment);
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/post.jsp");

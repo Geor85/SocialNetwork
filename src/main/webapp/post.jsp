@@ -17,7 +17,7 @@
   <li><a href="myComments.jsp">My comments</a></li>
   <li><a href="notifications.jsp">Notifications</a></li>
   <li id="log">
-  <c:out value=" ${sessionScope.user.userName}" escapeXml="false" />
+  <img src="<c:url value="${sessionScope.user.avatar}"/>" width="15"/> <c:out value=" ${sessionScope.user.userName}" escapeXml="false" />
 					<form action="logout" method="POST">
 						<input type="submit" name="confirm" value="Log out" /></br>
 					</form>
@@ -57,16 +57,30 @@
 					<p><c:out value="${comments.userName}" escapeXml="false" /></p> 
 			    
 				<c:out value="${comments.commentMessage}" escapeXml="false" />
+				<br/>
+	<c:choose>			
+				<c:when test="${sessionScope.user.userName == comments.userName}">
+			<a href="<c:url value="/deletecomment?commentid=${comments.id}"/>">Delete</a>
+		</c:when>
+	</c:choose>
+	
+	<c:choose>
+	
+		<c:when test="${sessionScope.user.privilege == 'admin'}">
+			<a href="<c:url value="/deletecomment?commentid=${comments.id}"/>">Delete</a>
+		</c:when>
+		</c:choose>
+		
 				</div>
 		</c:forEach>
 		<form class ="addcomment" onsubmit="return emptyComment()" action="addcomment" method="GET">
 						<p>
-							<input id="comment" type="text" name="comment" placeholder="Comment" />
+							<textarea id="comment" type="text" name="comment" placeholder="Enter your message" ></textarea>
 						</p>
 						
 						<p id="messcomment"></p>
 
-						<input class="addcommentbutton" type="submit" name="confirm" value="Add comment" />
+						<input class="addcommentbutton" type="submit" name="confirm" value="Add" />
 						
 					</form>
 </div>

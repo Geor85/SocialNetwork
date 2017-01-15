@@ -2,6 +2,7 @@ package SNServlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +17,7 @@ import SNDAO.PostDAO;
 import SNDAO.PostDAOImpl;
 import SNDAO.UserDAO;
 import SNDAO.UserDAOImpl;
-import bean.Post;
+import bean.*;
 
 
 
@@ -31,8 +32,9 @@ public class ShowCommentsByPostIdServlet extends HttpServlet {
 		CommentDAO commentDAO = new CommentDAOImpl();
 		UserDAO userDAO = new UserDAOImpl();
 		Post post = (Post) request.getSession().getAttribute("post");
-		System.out.println(post);
-		request.getSession().setAttribute("comments", commentDAO.ShowCommentsByPostId(post.getId()));	
+		ArrayList<Comment> comments = commentDAO.ShowCommentsByPostId(post.getId());
+		Collections.reverse(comments);
+		request.getSession().setAttribute("comments", comments);	
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/post.jsp");
 		rd.forward(request, response);
 	}

@@ -2,6 +2,8 @@ package SNServlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,6 +23,7 @@ public class ShowPostsServlet extends HttpServlet {
 		
 		PostDAO postDAO = new PostDAOImpl();
 		ArrayList<Post> posts = postDAO.showAllPosts();
+		Collections.reverse(posts);
 		request.setAttribute("allposts", posts);
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
 		rd.forward(request, response);

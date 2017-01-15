@@ -5,10 +5,12 @@ F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\AddPostServlet.j
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNDAO\PostDAOImpl.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\AddCommentServlet.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\RegistrationServlet.java
+F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\DeletePostServlet.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\Main.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\bean\Comment.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\ShowCommentsByPostIdServlet.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\LogInServlet.java
+F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\ShowMyComments.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\bean\Post.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\ShowUserPostsServlet.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNDAO\CommentDAOImpl.java
@@ -16,4 +18,5 @@ F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\bean\User.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNDAO\PostDAO.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\ShowOnePostServlet.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\LogOutServlet.java
+F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNServlet\DeleteCommentServlet.java
 F:\MyJavaProjects\Massivs\SocialNetwork\src\main\java\SNDAO\UserDAO.java

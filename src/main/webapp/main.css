@@ -18,6 +18,7 @@ li {
 }
 
 #log {
+	height: 30px;
 	float: right;
 }
 
@@ -45,7 +46,7 @@ li a:hover:not(.active) {
 	}
 	
 .posts {
-	
+	padding:10px;
 	background-color:#ffffff;
 	width:500px;
 	margin: 10px 20%;
@@ -63,10 +64,11 @@ li a:hover:not(.active) {
 	border-bottom-style: 5px solid;
 	margin-left: 10%;
 	background-color:#ffffff;
-	width:70%;
+	width:69.8%;
 	height:56px;
-	padding:5px;
+	padding:10px;
 	text-align: down;
+	border: 1px solid #000040;
 }
 .avatar {
 	background-color:#4CAF50;
@@ -85,13 +87,13 @@ li a:hover:not(.active) {
 }
 .text {
 	text-indent: 10px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	
+	
+	
 	padding: 5px;
 	background-color:#ffffff;
 	width:480px;
-	height:20px;
+	
 	border: 1px solid #c0c0c0;
 	border-radius: 5px;	
 	margin-top: 15px;
@@ -103,22 +105,23 @@ li a:hover:not(.active) {
 	text-indent: 10px;
 	margin-left: 10%;
 	text-overflow: ellipsis;
-	padding: 5px;
+	padding: 10px;
 	background-color:#ffffff;
 	width:69.8%;
 	min-height:30px;
-	border: 1px solid #c0c0c0;
+	border: 1px solid #000040;
 	
 }
 
 #comments_line {
+	
 	border-bottom-style: solid;
 	margin-left: 10%;
 	pedding: 0;
 	background-color:#f2f2f2;
 	width:70%;
 	height:20px;
-	border: 2px bottom #00ffff;
+	border-style: 2px bottom #000080;
 	margin-top: 20px;
 }
 
@@ -134,8 +137,29 @@ li a:hover:not(.active) {
 
 #comment {
 	width: 50%;
-	height: 30px;
+    height: 80px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
 }
+
+#postadd {
+	margin:20px 30px 0 0;
+	width: 400px;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
 
 .addcommentbutton {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -161,28 +185,32 @@ form {
 }
 
 .otherform {
-	background-color:#0080ff;
+	border: none;
+	background-color:#4CAF50;
 	position: fixed;
 	top: 20%;
-	left: 40%;
-	border: 2px solid #000040;
-	border-radius: 5px;	
-	padding: 5px;
+	left: 35%;
+	padding: 15px;
+	min-height: 150px;
 }
-
+input {
+	width: 200px;
+	height: 20px;
+}
 input[type=button], input[type=submit], input[type=reset] {
+	border: 1px solid #c0c0c0;
 	background-color: #4CAF50;
-	border: none;
 	color: white;
 	padding: 5px 10px;
 	text-decoration: none;
 	margin: 0 2px;
 	cursor: pointer;
+	height: 30px;
+	width: 100px;
 }
 
 .btn {
 	background-color: #0080ff;
-	
 	border: none;
 	color: white;
 	padding: 3px 8px 4px 10px;

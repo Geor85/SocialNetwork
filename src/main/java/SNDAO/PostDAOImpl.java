@@ -22,7 +22,7 @@ public class PostDAOImpl implements PostDAO {
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/socialnetwork", "root",
 				"");
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("INSERT INTO posts (user_id, post_message) VALUES(?, ?);")) {
+						.prepareStatement("INSERT INTO posts (user_name, post_message) VALUES(?, ?);")) {
 			preparedStatement.setString(1, post.getUserName());
 			preparedStatement.setString(2, post.getPostMessage());
 			preparedStatement.executeUpdate();
@@ -118,12 +118,10 @@ public class PostDAOImpl implements PostDAO {
 			preparedStatement.setString(1, userName);
 			ResultSet rs = preparedStatement.executeQuery();
 			ArrayList<Post> posts = new ArrayList<Post>();
-			if (rs.next() == false) {
-				return posts;
-			}
+			
 
 			while (rs.next()) {
-				posts.add(new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message"), rs.getString("avatar")));
+				posts.add(new Post(rs.getInt("post_id"), rs.getString("user_name"), rs.getString("post_message")));
 			}
 
 			return posts;

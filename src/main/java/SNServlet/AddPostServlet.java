@@ -23,12 +23,12 @@ public class AddPostServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		PostDAO postDAO = new PostDAOImpl();
 		User user = (User) request.getSession().getAttribute("user");
-		Post post = new Post(user.getUserName(), request.getParameter("post"));
+		Post post = new Post(user.getUserName(), request.getParameter("postmessage"));
 		postDAO.postAdd(post);
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/showallposts");
-		rd.forward(request, response);
+		response.sendRedirect(request.getHeader("Referer"));
 	}
 
 }

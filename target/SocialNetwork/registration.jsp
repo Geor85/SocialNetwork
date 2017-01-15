@@ -21,7 +21,7 @@
 
 	
 
-		<div>
+		<div id="divone">
 		
 						
 				    <form class ="otherform" onsubmit="return emptyForm()" action="registration" method="POST">
@@ -30,6 +30,7 @@
 							<input id="username" type="text" name="username" placeholder="Username" />
 						</p>
 						<p id="messusername"></p>
+						<c:out value="${requestScope.Sysmessage}" escapeXml="false" />
 						<p>
 							<input type="text" name="name" placeholder="Name" />
 						</p>

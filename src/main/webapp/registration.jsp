@@ -30,6 +30,7 @@
 							<input id="username" type="text" name="username" placeholder="Username" />
 						</p>
 						<p id="messusername"></p>
+						<c:out value="${requestScope.Sysmessage}" escapeXml="false" />
 						<p>
 							<input type="text" name="name" placeholder="Name" />
 						</p>

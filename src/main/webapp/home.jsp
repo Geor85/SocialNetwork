@@ -42,6 +42,18 @@
 
 	<div id="divone">
 	
+	
+	<form class ="addpost" action="addpost" method="POST">
+						<p>
+							<textarea id="postadd" type="text" name="postmessage" placeholder="Enter your post message" ></textarea>
+						</p>
+						<input type="submit" name="confirm" value="Add post" />
+						
+					</form>
+					
+					
+					
+	
 	<c:forEach items="${allposts}" var="posts">
 	<div class="posts">
 			<div class="post_head">
@@ -52,7 +64,18 @@
 			<div class="text">
 				<c:out value="${posts.postMessage}" escapeXml="false" />
 				</div>
-				<a href="<c:url value="/showonepost?username=${posts.userName}&postid=${posts.id}"/>">Читать дальше..</a>
+				<a href="<c:url value="/showonepost?username=${posts.userName}&postid=${posts.id}"/>">Go to post..</a>
+				<c:choose>
+		<c:when test="${sessionScope.user.userName == posts.userName}">
+			<a href="<c:url value="/deletepost?postid=${posts.id}"/>">Delete</a>
+		</c:when>
+	</c:choose>
+	
+	<c:choose>
+		<c:when test="${sessionScope.user.privilege == 'admin'}">
+			<a href="<c:url value="/deletepost?postid=${posts.id}"/>">Delete</a>
+		</c:when>
+		</c:choose>
 			</div>
 			
 		</c:forEach>

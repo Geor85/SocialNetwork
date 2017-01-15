@@ -17,7 +17,7 @@
   <li><a class="active" href="myComments.jsp">My comments</a></li>
   <li><a href="notifications.jsp">Notifications</a></li>
   <li id="log">
-  <c:out value="${sessionScope.user.userName}" escapeXml="false" />
+  <img src="<c:url value="${sessionScope.user.avatar}"/>" width="15"/> <c:out value="${sessionScope.user.userName}" escapeXml="false" />
 					<form action="logout" method="POST">
 						<input type="submit" name="confirm" value="Log out" /></br>
 					</form>
@@ -42,9 +42,12 @@
 
 <c:forEach items="${mycomments}" var="mycomments">
 		         <div id="comments">
-					<p><c:out value="${mycomments.userName}" escapeXml="false" /></p> 
+					 <p><c:out value="${mycomments.userName}" escapeXml="false" /></p> 
 			    
 				<c:out value="${mycomments.commentMessage}" escapeXml="false" />
+				
+			<a href="<c:url value="/deletecomment?commentid=${mycomments.id}"/>">Delete</a>
+		
 				</div>
 		</c:forEach>
 		

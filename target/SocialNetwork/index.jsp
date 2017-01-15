@@ -29,7 +29,7 @@
 
 	
 
-		<div>
+		<div id="divone">
 		
 					<form class ="otherform" action="login" method="POST">
 						<p>

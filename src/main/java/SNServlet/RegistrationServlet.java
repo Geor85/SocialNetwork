@@ -30,7 +30,7 @@ public class RegistrationServlet extends HttpServlet {
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp"); 
 			rd.forward(request, response);
 		} else {
-			request.getSession().setAttribute("Sysmessage", "User name is busy. Please choose other user name.");
+			request.setAttribute("Sysmessage", "User name is busy. Please choose another user name.");
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/registration.jsp"); 
 			rd.forward(request, response);
 		}

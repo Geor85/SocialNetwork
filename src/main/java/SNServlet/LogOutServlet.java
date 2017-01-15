@@ -13,7 +13,7 @@ public class LogOutServlet extends HttpServlet {
   
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().setAttribute("user", null);
+		request.getSession().invalidate();
 		response.sendRedirect("index.jsp");
 	}
 

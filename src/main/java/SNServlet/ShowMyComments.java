@@ -29,7 +29,6 @@ public class ShowMyComments extends HttpServlet {
 		
 		CommentDAO commentDAO = new CommentDAOImpl();
 		User user = (User) request.getSession().getAttribute("user");
-		System.out.println(user);
 		request.getSession().setAttribute("mycomments", commentDAO.ShowCommentByUserName(user.getUserName()));	
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/myComments.jsp");
 		rd.forward(request, response);

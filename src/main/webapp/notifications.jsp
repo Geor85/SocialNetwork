@@ -17,7 +17,7 @@
   <li><a href="myComments.jsp">My comments</a></li>
   <li><a class="active" href="notifications.jsp">Notifications</a></li>
   <li id="log">
-  <c:out value="${sessionScope.user.userName}" escapeXml="false" />
+  <img src="<c:url value="${sessionScope.user.avatar}"/>" width="15"/> <c:out value="${sessionScope.user.userName}" escapeXml="false" />
 					<form action="logout" method="POST">
 						<input type="submit" name="confirm" value="Log out" /></br>
 					</form>
